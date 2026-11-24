@@ -33,9 +33,9 @@ dotnet run
 
 ## Ekran görüntüleri
 
-![Dosya görüntüsünde yüz algılama](docs/algilama.png)
+![Monica Bellucci portresinde yüz algılama](docs/monica-algilama.png)
 
-![Eğitimde kullanılmayan portreyle tanıma](docs/tani-obama.png)
+![Monica Bellucci portresiyle tanıma denemesi](docs/monica-tanima.png)
 
 ## Sınırlamalar
 
@@ -43,9 +43,9 @@ LBPH uzaklığı bir yüzde değildir. Düşük değer daha yakın eşleşmeye k
 
 ## Yerel test sonuçları
 
-İki etiket için üçer örnekle eğitim tamamlandı. Her eğitim sınıfı bir açık örnek görüntünün kırpılmış ve döndürülmüş varyantlarını kullandı. Ayrı bir portre ile dosyadan tanıma testinde **Örnek A** döndü (LBPH uzaklığı yaklaşık 61,4). Bu tek deneme genelleme başarısını ölçmez. Kamera ile canlı tanıma doğrulanmadı.
+Model iki etiketle eğitildi. Monica Bellucci etiketi için dört fotoğraf, ikinci etiket için bir fotoğrafın beş farklı varyantı kullanıldı. Eğitimde kullanılmayan Monica Bellucci portresinde bir yüz algılandı ve model eşik içinde bir etiket bulamadığı için **Bilinmeyen** sonucunu verdi. Canlı kamera doğrulanmadı.
 
-Örnek ekran görüntülerindeki ABD federal hükûmeti portreleri kamu malı olarak yayımlanmıştır. Eğitim portresi [Pete Souza, 2009](https://commons.wikimedia.org/wiki/File:President_Barack_Obama.jpg) ve ayrı test portresi [Pete Souza, 2012](https://commons.wikimedia.org/wiki/File:President_Barack_Obama,_2012_portrait_crop.jpg) kaynaklıdır. İkinci eğitim etiketi için [NASA'nın Eileen Collins örneği](https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.astronaut) kullanıldı. Eğitim dosyaları ve üretilen model depoya eklenmedi. Haar Cascade dosyasının lisansı XML dosyasının başındadır.
+İki ekran görüntüsündeki portre, [Paul Katzenberger — Monica Bellucci San Sebastián](https://commons.wikimedia.org/wiki/File:Monica_Bellucci_San_Sebasti%C3%A1n.jpg) fotoğrafından kırpılıp yeniden boyutlandırıldı ve uygulamada dikdörtgenle işaretlendi. Fotoğraf ve bu ekran görüntüleri [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) lisansıyla paylaşılır. Eğitim dosyaları ve üretilen model depoya eklenmedi. Haar Cascade dosyasının lisansı XML dosyasının başındadır.
 
 ## Öğrenci
 
