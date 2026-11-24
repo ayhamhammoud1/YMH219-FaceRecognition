@@ -1,0 +1,52 @@
+# Yüz Laboratuvarı
+
+Kamera veya dosyada yüz algılama ve yerel örneklerle eğitilen bir modelle etiket tahmini.
+
+## Teknoloji
+
+C# / .NET 10, Windows Forms, [OpenCvSharp4.Windows 4.11.0.20250507](https://www.nuget.org/packages/OpenCvSharp4.Windows/4.11.0.20250507), Haar Cascade ve LBPH.
+
+## Kurulum ve çalıştırma
+
+Windows, Git ve .NET 10 SDK gerekir. Visual Studio kullanıyorsan **.NET masaüstü geliştirme** iş yükünü kur. Kendi GitHub kullanıcı adını aşağıdaki komutta yerine yaz.
+
+```powershell
+git clone https://github.com/GITHUB_KULLANICI_ADI/YMH219-FaceRecognition.git
+cd YMH219-FaceRecognition
+```
+
+Model dosyası için aşağıdaki özellikler bölümündeki kurulum adımını uygula.
+
+```powershell
+dotnet restore
+dotnet run
+```
+
+## Özellikler
+
+- Windows x64 ve Visual C++ x64 çalışma zamanı gerekir.
+- Aşağıdaki çalıştırma komutundan önce, model dosyası kaynakta yoksa [OpenCV 4.11 Haar Cascade dosyasını](https://raw.githubusercontent.com/opencv/opencv/4.11.0/data/haarcascades/haarcascade_frontalface_default.xml) proje klasörüne `haarcascade_frontalface_default.xml` adıyla kaydet. Derleme dosyayı uygulama klasörüne kopyalar.
+- **Görüntü seç** veya **Kamera başlat** ile görüntü aç. **Algıla** yüzleri dikdörtgenle işaretler.
+- Bir kişi için aynı etiketi kullan. Her seferinde tek yüz içeren farklı bir kare aç ve **Görünen yüzü örnek ekle** düğmesine bas. Liste kişi başına mevcut ve eksik örnek sayılarını gösterir.
+- En az iki etiket için üçer örnek ekleyince **Modeli eğit** düğmesine bas. Ardından eğitimden ayrı bir görüntü aç ve **Tanı** düğmesini kullan.
+- Örnekler ve eğitilen model bellekte tutulur. Kişisel fotoğrafları depo dışında tut.
+
+## Ekran görüntüleri
+
+![Dosya görüntüsünde yüz algılama](docs/algilama.png)
+
+![Eğitimde kullanılmayan portreyle tanıma](docs/tani-obama.png)
+
+## Sınırlamalar
+
+LBPH uzaklığı bir yüzde değildir. Düşük değer daha yakın eşleşmeye karşılık gelir. Kullanılan eşik ders demosu içindir.
+
+## Yerel test sonuçları
+
+İki etiket için üçer örnekle eğitim tamamlandı. Her eğitim sınıfı bir açık örnek görüntünün kırpılmış ve döndürülmüş varyantlarını kullandı. Ayrı bir portre ile dosyadan tanıma testinde **Örnek A** döndü (LBPH uzaklığı yaklaşık 61,4). Bu tek deneme genelleme başarısını ölçmez. Kamera ile canlı tanıma doğrulanmadı.
+
+Örnek ekran görüntülerindeki ABD federal hükûmeti portreleri kamu malı olarak yayımlanmıştır. Eğitim portresi [Pete Souza, 2009](https://commons.wikimedia.org/wiki/File:President_Barack_Obama.jpg) ve ayrı test portresi [Pete Souza, 2012](https://commons.wikimedia.org/wiki/File:President_Barack_Obama,_2012_portrait_crop.jpg) kaynaklıdır. İkinci eğitim etiketi için [NASA'nın Eileen Collins örneği](https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.astronaut) kullanıldı. Eğitim dosyaları ve üretilen model depoya eklenmedi. Haar Cascade dosyasının lisansı XML dosyasının başındadır.
+
+## Öğrenci
+
+Ad soyad ve öğrenci numarası teslimden önce eklenecek.
