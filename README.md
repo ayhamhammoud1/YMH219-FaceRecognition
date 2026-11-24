@@ -33,9 +33,9 @@ dotnet run
 
 ## Ekran görüntüleri
 
-![Monica Bellucci portresinde yüz algılama](docs/monica-algilama.png)
+![Donald Trump portresinde yüz algılama](docs/trump-algilama.png)
 
-![Monica Bellucci portresiyle tanıma denemesi](docs/monica-tanima.png)
+![Eğitim dışında bırakılan fotoğrafta Eileen Collins etiketi](docs/eileen-tanima.png)
 
 ## Sınırlamalar
 
@@ -43,9 +43,10 @@ LBPH uzaklığı bir yüzde değildir. Düşük değer daha yakın eşleşmeye k
 
 ## Yerel test sonuçları
 
-Model iki etiketle eğitildi. Monica Bellucci etiketi için dört fotoğraf, ikinci etiket için bir fotoğrafın beş farklı varyantı kullanıldı. Eğitimde kullanılmayan Monica Bellucci portresinde bir yüz algılandı ve model eşik içinde bir etiket bulamadığı için **Bilinmeyen** sonucunu verdi. Canlı kamera doğrulanmadı.
+- **Algılama:** Donald Trump portresinde bir yüz bulundu. Trump ile yapılan ayrı tanıma denemelerinde model eğitimde kullanılmayan portreleri **Bilinmeyen** olarak işaretledi.
+- **Tanıma:** İki etiketle eğitilen model, eğitimde kullanılmayan NASA fotoğrafında **Eileen Collins** etiketini verdi (LBPH uzaklığı 84,6, eşik 85). Bu tek deneme modelin genel doğruluğunu ölçmez. Canlı kamera doğrulanmadı.
 
-İki ekran görüntüsündeki portre, [Paul Katzenberger — Monica Bellucci San Sebastián](https://commons.wikimedia.org/wiki/File:Monica_Bellucci_San_Sebasti%C3%A1n.jpg) fotoğrafından kırpılıp yeniden boyutlandırıldı ve uygulamada dikdörtgenle işaretlendi. Fotoğraf ve bu ekran görüntüleri [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) lisansıyla paylaşılır. Eğitim dosyaları ve üretilen model depoya eklenmedi. Haar Cascade dosyasının lisansı XML dosyasının başındadır.
+Ekran görüntülerinde [Daniel Torok'un Ocak 2025 Donald Trump portresi](https://commons.wikimedia.org/wiki/File:January_2025_Official_Presidential_Portrait_of_Donald_J._Trump.jpg) ve [NASA'nın Eileen Collins fotoğrafı](https://scikit-image.org/docs/0.24.x/api/skimage.data.html#skimage.data.astronaut) kullanıldı. İki fotoğraf da kamu malıdır ve uygulama için kırpılıp yeniden boyutlandırıldı. Eğitim dosyaları ve üretilen model depoya eklenmedi. Haar Cascade dosyasının lisansı XML dosyasının başındadır.
 
 ## Öğrenci
 
